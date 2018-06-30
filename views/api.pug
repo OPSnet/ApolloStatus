@@ -1,0 +1,30 @@
+extends layout
+block body-content
+    div#content
+        h3 About the APIs
+        h3 API Endpoints
+
+        p The following API endpoints are available:
+
+        p.api
+            a(href="/api/status") /api/status
+            p.api-description Get the status of all monitored services
+            p.api-description 0 = offline, no response over last 3 minutes
+            p.api-description 1 = online, service responded perfectly over last 3 minutes
+            p.api-description 2 = unstable, intermittent responses over the past 3 minutes
+
+        p.api
+            a(href="/api/latency") /api/latency
+            p.api-description Get the latency of all monitored services as applicable
+
+        p.api
+            a(href="/api/uptime") /api/uptime
+            p.api-description Get the current uptime of all services, the numbers are displayed in minutes.
+
+        p.api
+            a(href="/api/records") /api/records
+            p.api-description Get the best recorded continuous uptime of all services, the numbers are displayed in minutes.
+
+        p.api
+            a(href="/api/all") /api/all
+            p.api-description This combines all other APIs into one convenient endpoint.

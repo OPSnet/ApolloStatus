@@ -1,0 +1,61 @@
+extends layout
+
+block body-content
+    script(type='text/javascript').
+        ajaxGet('/api/status', function(components) {
+          for (var component in components) {
+            if (components.hasOwnProperty(component)) {
+              var elem = document.getElementById('status-' + component);
+              if (components[component] === 1) {
+                elem.innerText = 'Up';
+                elem.style.color = '#089a00';
+                document.getElementById('status-' + component + '-icon').setAttribute('src', 'images/up.png');
+              }
+              else if (components[component] === 0) {
+                elem.innerText = 'Down';
+                elem.style.color = '#ff1600';
+                document.getElementById('status-' + component + '-icon').setAttribute('src', 'images/down.png');
+              }
+              else {
+                elem.innerText = 'Updating...';
+                document.getElementById('status-' + component + '-icon').setAttribute('src', 'images/updating.png');
+              }
+            }
+          }
+        });
+
+        ajaxGet('/api/latency', function(components) {
+          for (var component in components) {
+            if (components.hasOwnProperty(component)) {
+              var elem = document.getElementById('status-' + component);
+              elem.innerText = components[component] + 'ms';
+            }
+          }
+        });
+
+    div#content
+        div.status-dashboard
+            table.service-table
+                tr
+                    td.icon
+                        img(src, id='status-site-icon')
+                    td.service Site - apollo.rip
+                    td#status-site
+                tr
+                    td.icon
+                        img(src, id='status-tracker-icon')
+                    td.service HTTPS Tracker - mars.apollo.rip
+                    td#status-tracker
+                tr
+                    td.icon
+                        img(src, id='status-httptracker-icon')
+                    td.service HTTP Tracker - apollo.rip:2095
+                    td#status-httptracker
+                tr
+                    td.icon
+                        img(src, id='status-irc-icon')
+                    td.service IRC - irc.apollo.rip
+                    td#status-irc
+
+
+

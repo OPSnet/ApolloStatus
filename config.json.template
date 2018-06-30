@@ -1,0 +1,12 @@
+{
+  "site_name": "EXAMPLE",
+  "site": "example.com",
+  "tracker": {
+    "https": "tracker.example.com",
+    "http": "example.com:2095"
+  },
+  "irc": {
+    "fqdn": "irc.example.com",
+    "port": 6667,
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "apollostatus",
+    "description": "Status site to monitor the up status of various components of a torrent site",
+    "author": "ApolloRIP",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node app"
+    },
+    "repository": "github:apollo/status",
+    "license": "Unlicense",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cron": "^1.3",
+        "errorhandler": "^1.5.0",
+        "express": "^4.16",
+        "morgan": "^1.9",
+        "nodemon": "^1.17.5",
+        "pug": "^2.0",
+        "redis": "^2.8",
+        "request": "^2.87",
+        "serve-favicon": "^2.5",
+        "winston": "^3.0.0"
+    }
+}

@@ -1,0 +1,169 @@
+#content {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.service-table {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.stats-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul span {
+    float: right;
+}
+
+.up {
+    color: #089a00;
+    font-weight: bold;
+}
+.down {
+    font-weight: bold;
+    color: #ff1600;
+}
+.maintenance {
+    font-weight: bold;
+    color: #ff1600;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 50px;
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px;
+}
+
+footer ul li {
+    list-style:none;
+    display: inline;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer ul li:after {
+ content:"·";
+ color:#666;
+}
+
+footer ul li:last-child:after {
+    content:"";
+}
+
+footer ul li a {
+ margin:0 8px;
+ color:blue;
+}
+
+body {
+    background: #212328;
+    color: #c6c9c9;
+    text-shadow: #111 0px 1px 0px;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+a:link, a:visited {
+    color: #999;
+    text-decoration: none;
+}
+a:hover, a:visited:hover {
+    color: #aaa;
+}
+.disclaimer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 10px;
+}
+th {
+    text-align: left;
+}
+.stats-table td {
+    width: 500px;
+}
+h3 {
+    padding-top: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.follow-us {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+.twitter{
+    width: 550px;
+    margin: 0 auto
+}
+
+.status-dashboard {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 140px;
+    margin: 50px auto 0 auto;
+    width: 550px;
+    text-align: center;
+}
+
+.logo img {
+    height: 100%;
+}
+
+div #chart-tracker-uptime {
+    text-shadow: none;
+}
+
+p.api-description {
+    font-size: 12px;
+    padding-left: 15px;
+}
+
+.about-logos {
+    list-style: none;
+    padding: 0;
+}
+
+.about-logos li {
+    display: inline;
+}
+
+.about-logos li img {
+    height: 50px;
+    margin:0 8px;
+}
+
+h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.faq-list {
+  margin-top: 0px;
+}
+
+:target {
+  color: yellow;
+}
+
+:target a:visited {
+  color: yellow;
+}
+
+
+

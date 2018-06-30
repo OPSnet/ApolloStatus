@@ -1,0 +1,42 @@
+extends layout
+block body-content
+    script(type='text/javascript').
+      document.addEventListener('DOMContentLoaded', function() {
+        ajaxGet('/api/uptime', function (components) {
+          for (var component in components) {
+            if (components.hasOwnProperty(component)) {
+              document.getElementById('stats-uptime-' + component).innerHTML = minutesToHumanString(components[component]);
+            }
+          }
+        });
+
+        ajaxGet('/api/records', function (components) {
+          for (var component in components) {
+            if (components.hasOwnProperty(component)) {
+              document.getElementById('stats-uptimerecord-' + component).innerHTML = minutesToHumanString(components[component]);
+            }
+          }
+        });
+      });
+
+    div#content
+        h3 Uptime
+        ul.stats-list
+            li Site - apollo.rip
+                span#stats-uptime-site
+            li HTTPS Tracker - mars.apollo.rip
+                span#stats-uptime-tracker
+            li HTTP Tracker - apollo.rip:2095
+                span#stats-uptime-httptracker
+            li IRC - irc.apollo.rip
+                span#stats-uptime-irc
+        h3 Uptime Records
+        ul.stats-list
+            li Site - apollo.rip
+                span#stats-uptimerecord-site
+            li HTTPS Tracker - mars.apollo.rip
+                span#stats-uptimerecord-tracker
+            li HTTP Tracker - apollo.rip:2095
+                span#stats-uptimerecord-httptracker
+            li IRC - irc.apollo.rip
+                span#stats-uptimerecord-irc

@@ -1,0 +1,12 @@
+extends layout
+block body-content
+    div#content
+        h3 About
+        p This is the official status site of apollo.rip
+        p The services are checked every minute, if a service is down for more than 3 minutes it's reflected on the site.
+        p
+            | We make all service checks once a minute, and then average it over three minutes. If it's up for the
+            | full three minutes, then the service is considered up and healthy. If it's down for all three minutes, then
+            | the service is considered unhealthy and down. If it's not quite up or down, then it's considered unstable.
+        p
+            |

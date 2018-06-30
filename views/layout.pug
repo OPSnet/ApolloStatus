@@ -1,0 +1,71 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="shortcut icon", href="images/favicon.ico")
+    script(type='text/javascript').
+      function ajaxGet(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              callback(JSON.parse(xhr.responseText));
+            }
+            else {
+              console.log("Error: " + xhr.status + ", Text: " + xhr.statusText);
+            }
+          }
+        }
+        xhr.open('GET', url, true);
+        xhr.send();
+      }
+
+      function minutesToHumanString(minutes) {
+        var minutesYear = 525600;
+        var minutesMonth = 43200; // We assume 30 days in a month
+        var minutesDay = 1440;
+        var minutesHour = 60;
+        var string = "";
+        var years = Math.floor(minutes / minutesYear);
+        if (years > 0) {
+          string += years + "Y ";
+          minutes -= years * minutesYear;
+        }
+        var months = Math.floor(minutes / minutesMonth);
+        if (months > 0) {
+          string += months + "M ";
+          minutes -= months * minutesMonth;
+        }
+        var days = Math.floor(minutes / minutesDay);
+        if (days > 0) {
+          string += days + "D ";
+          minutes -= days * minutesDay;
+        }
+        var hours = Math.floor(minutes / minutesHour);
+        if (hours > 0) {
+          string += hours + "h ";
+          minutes -= hours * minutesHour;
+        }
+        if (minutes > 0) {
+          string += minutes + "m";
+        }
+        return string.trim();
+      }
+  body
+    div.logo
+      img(src='images/logos/logo.png')
+    block body-content
+    footer
+      p All information is cached and updated every minute.
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='stats') Stats
+        li
+          a(href='api') API
+        li
+          a(href='faq') FAQ
+        li
+          a(href='about') About
